@@ -1,5 +1,5 @@
 use std::net::{TcpListener, TcpStream};
-use std::io::{Read, Write};
+use std::io::{Write};
 use std::thread;
 
 static HOST: &'static str = "127.0.0.1:8080";
