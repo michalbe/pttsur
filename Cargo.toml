@@ -1,0 +1,6 @@
+[package]
+name = "pttsur"
+version = "0.1.0"
+authors = ["Michał Budzyński <michal@virtualdesign.pl>"]
+
+[dependencies]
