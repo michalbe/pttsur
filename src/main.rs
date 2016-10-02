@@ -4,15 +4,17 @@ use std::thread;
 
 static HOST: &'static str = "127.0.0.1:8080";
 
-fn handle_client(mut stream: TcpStream) {
+fn send_headers(mut stream: &TcpStream) {
     let headers = b"HTTP/1.1 200 OK\r\n\r\n";
-    let content = b"Hello world";
-
     match stream.write(headers) {
         Ok(_) => println!("OK"),
         Err(e) => println!("Fail: {}", e),
     }
+}
 
+fn handle_client(mut stream: TcpStream) {
+    send_headers(&stream);
+    let content = b"Hello world";
     match stream.write(content) {
         Ok(_) => println!("OK"),
         Err(e) => println!("Fail: {}", e),
